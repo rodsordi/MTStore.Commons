@@ -13,7 +13,7 @@ import java.util.UUID;
 import java.util.regex.Pattern;
 
 @Slf4j
-public abstract class KafkaListener<T> {
+public abstract class KafkaListener<T> extends KafkaComponent {
     private final KafkaConsumer<String, T> kafkaConsumer;
 
     public KafkaListener(Properties properties, Topic topic) {
@@ -43,14 +43,14 @@ public abstract class KafkaListener<T> {
         }
     }
 
-    private Properties handleProperties(Properties externalProperties) {
+    @Override
+    protected Properties commonsProperties() {
         Properties commonsProperties = new Properties();
         commonsProperties.setProperty(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
         commonsProperties.setProperty(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, DeserializerGson.class.getName());
         commonsProperties.setProperty(ConsumerConfig.GROUP_ID_CONFIG, getClass().getSimpleName() + "_" + UUID.randomUUID());
         commonsProperties.setProperty(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, "1");
         commonsProperties.setProperty(DeserializerGson.TYPE_CONFIG, getType().getName());
-        commonsProperties.putAll(externalProperties);
         return commonsProperties;
     }
 }

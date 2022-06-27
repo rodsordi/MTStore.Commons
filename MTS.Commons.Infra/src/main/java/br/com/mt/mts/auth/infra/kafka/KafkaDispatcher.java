@@ -12,7 +12,7 @@ import java.util.Properties;
 import java.util.concurrent.ExecutionException;
 
 @Slf4j
-public abstract class KafkaDispatcher<T> implements Closeable {
+public abstract class KafkaDispatcher<T> extends KafkaComponent implements Closeable {
     private final Topic topic;
 
     private KafkaProducer kafkaProducer;
@@ -26,11 +26,11 @@ public abstract class KafkaDispatcher<T> implements Closeable {
         prepareCallback();
     }
 
-    private Properties handleProperties(Properties externalProperties) {
+    @Override
+    protected Properties commonsProperties() {
         Properties commonsProperties = new Properties();
         commonsProperties.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
         commonsProperties.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, SerializerGson.class.getName());
-        commonsProperties.putAll(externalProperties);
         return commonsProperties;
     }
 
