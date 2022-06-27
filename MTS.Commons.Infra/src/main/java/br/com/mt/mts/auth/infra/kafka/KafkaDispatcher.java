@@ -20,12 +20,24 @@ public abstract class KafkaDispatcher<T> implements Closeable {
 
     protected abstract String getChave(T t);
 
-    public KafkaDispatcher(Topic topic) {
+    public KafkaDispatcher(Properties properties, Topic topic) {
         this.topic = topic;
-        kafkaProducer = new KafkaProducer<String, String>(properties());
+        kafkaProducer = new KafkaProducer<String, String>(handleProperties(properties));
+        prepareCallback();
+    }
+
+    private Properties handleProperties(Properties externalProperties) {
+        Properties commonsProperties = new Properties();
+        commonsProperties.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
+        commonsProperties.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, SerializerGson.class.getName());
+        commonsProperties.putAll(externalProperties);
+        return commonsProperties;
+    }
+
+    private void prepareCallback() {
         callback = (data, e) -> {
             if (e != null) {
-                log.error(e.getMessage(), e);
+                log.error(e.getMessage());
                 return;
             }
             log.info("Enviada msg topico: {}, partition: {}, offset: {}",
@@ -37,14 +49,6 @@ public abstract class KafkaDispatcher<T> implements Closeable {
 
     public void enviar(T mensagem) throws ExecutionException, InterruptedException {
         kafkaProducer.send(new ProducerRecord<>(topic.name(), getChave(mensagem), mensagem), callback).get();
-    }
-
-    private Properties properties() {
-        var properties = new Properties();
-        properties.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "127.0.0.1:9092");
-        properties.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
-        properties.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, SerializerGson.class.getName());
-        return properties;
     }
 
     @Override
