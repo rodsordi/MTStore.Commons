@@ -8,7 +8,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="MTS.Commons.Infra" />
+        <module name="MTS.Commons.App" />
         <module name="MTS.Auth.SpringApp" />
+        <module name="MTS.Commons.Domain" />
       </profile>
       <profile name="Annotation profile for MTS.Auth" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -42,6 +44,8 @@
       <module name="MTS.Auth.Domain" options="-parameters" />
       <module name="MTS.Auth.Infra" options="-parameters" />
       <module name="MTS.Auth.SpringApp" options="-parameters" />
+      <module name="MTS.Commons.App" options="-parameters" />
+      <module name="MTS.Commons.Domain" options="-parameters" />
       <module name="MTS.Commons.Infra" options="-parameters" />
     </option>
   </component>

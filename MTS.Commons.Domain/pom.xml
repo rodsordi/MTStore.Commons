@@ -9,19 +9,10 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>MTS.Commons.Infra</artifactId>
-
-    <dependencies>
-        <!-- Data -->
-        <dependency>
-            <groupId>org.apache.kafka</groupId>
-            <artifactId>kafka-clients</artifactId>
-            <version>3.2.0</version>
-        </dependency>
-    </dependencies>
+    <artifactId>MTS.Commons.Domain</artifactId>
 
     <build>
-        <finalName>MTS.Commons.Infra</finalName>
+        <finalName>MTS.Commons.Domain</finalName>
         <sourceDirectory>src/main/java</sourceDirectory>
         <testSourceDirectory>src/test/java</testSourceDirectory>
         <testResources>

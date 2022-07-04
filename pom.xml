@@ -17,8 +17,9 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>MTS.Commons.App</module>
+        <module>MTS.Commons.Domain</module>
         <module>MTS.Commons.Infra</module>
+        <module>MTS.Commons.App</module>
     </modules>
 
     <properties>
