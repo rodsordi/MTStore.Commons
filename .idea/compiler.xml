@@ -41,7 +41,8 @@
       <module name="AutenticacaoZmb.SpringApp" options="-parameters" />
       <module name="MTS.Auth.Domain" options="-parameters" />
       <module name="MTS.Auth.Infra" options="-parameters" />
-      <module name="MTS.Auth.SpringApp" options="" />
+      <module name="MTS.Auth.SpringApp" options="-parameters" />
+      <module name="MTS.Commons.Infra" options="-parameters" />
     </option>
   </component>
 </project>

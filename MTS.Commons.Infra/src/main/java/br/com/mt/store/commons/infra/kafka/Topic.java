@@ -1,4 +1,4 @@
-package br.com.mt.mts.auth.infra.kafka;
+package br.com.mt.store.commons.infra.kafka;
 
 public enum Topic {
     MTS_AUTH_USER_AUTHENTICATION,

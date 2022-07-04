@@ -1,4 +1,4 @@
-package br.com.mt.mts.auth.infra.kafka;
+package br.com.mt.store.commons.infra.kafka;
 
 import com.google.gson.Gson;
 import org.apache.kafka.common.serialization.Deserializer;

@@ -8,15 +8,18 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>MTS.Auth.SpringApp</artifactId>
+    <artifactId>MTS.Commons.App</artifactId>
     <packaging>jar</packaging>
 
     <dependencies>
-
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
-        <finalName>MTS.Auth.SpringApp</finalName>
+        <finalName>MTS.Commons.App</finalName>
         <sourceDirectory>src/main/java</sourceDirectory>
         <testSourceDirectory>src/test/java</testSourceDirectory>
     </build>
