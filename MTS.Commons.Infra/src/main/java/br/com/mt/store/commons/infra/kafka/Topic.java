@@ -2,7 +2,7 @@ package br.com.mt.store.commons.infra.kafka;
 
 public enum Topic {
     MTS_AUTH_USER_AUTHENTICATION,
-    MTS_AUTH_TOKEN_GENERATION,
-    MTS_AUTH_PASS_REINITIALIZATION,
-    MTS_AUTH_ACCOUNT_CREATION
+
+    MTS_USER_CREATION,
+    MTS_USER_PASSWORD_RESET
 }

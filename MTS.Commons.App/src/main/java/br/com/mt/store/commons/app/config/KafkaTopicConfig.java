@@ -1,5 +1,6 @@
 package br.com.mt.store.commons.app.config;
 
+import br.com.mt.store.commons.infra.kafka.Topic;
 import org.apache.kafka.clients.admin.AdminClientConfig;
 import org.apache.kafka.clients.admin.NewTopic;
 import org.springframework.beans.factory.annotation.Value;
@@ -24,12 +25,18 @@ public class KafkaTopicConfig {
     }
 
     @Bean
-    public NewTopic userCreation() {
-        return new NewTopic("MTS_USER_CREATION", 1, (short) 1);
+    public NewTopic authentication() {
+        return new NewTopic(Topic.MTS_AUTH_USER_AUTHENTICATION.name(), 3, (short) 1);
     }
 
     @Bean
-    public NewTopic test() {
-        return new NewTopic("TEST_0", 3, (short) 1);
+    public NewTopic userCreation() {
+        return new NewTopic(Topic.MTS_USER_CREATION.name(), 3, (short) 1);
     }
+
+    @Bean
+    public NewTopic userPasswordReset() {
+        return new NewTopic(Topic.MTS_USER_PASSWORD_RESET.name(), 3, (short) 1);
+    }
+
 }
