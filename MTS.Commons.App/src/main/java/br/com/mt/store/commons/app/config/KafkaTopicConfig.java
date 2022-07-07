@@ -26,17 +26,17 @@ public class KafkaTopicConfig {
 
     @Bean
     public NewTopic authentication() {
-        return new NewTopic(Topic.MTS_AUTH_USER_AUTHENTICATION.name(), 3, (short) 1);
+        return new NewTopic(Topic.MTS_AUTH_USER_AUTHENTICATION, 3, (short) 1);
     }
 
     @Bean
     public NewTopic userCreation() {
-        return new NewTopic(Topic.MTS_USER_CREATION.name(), 3, (short) 1);
+        return new NewTopic(Topic.MTS_USER_CREATION, 3, (short) 1);
     }
 
     @Bean
     public NewTopic userPasswordReset() {
-        return new NewTopic(Topic.MTS_USER_PASSWORD_RESET.name(), 3, (short) 1);
+        return new NewTopic(Topic.MTS_USER_PASSWORD_RESET, 3, (short) 1);
     }
 
 }

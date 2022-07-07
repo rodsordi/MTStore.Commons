@@ -15,9 +15,9 @@ import java.util.regex.Pattern;
 public abstract class KafkaListener<T> extends KafkaComponent {
     private final KafkaConsumer<String, T> kafkaConsumer;
 
-    public KafkaListener(Properties properties, Topic topic) {
+    public KafkaListener(Properties properties, String topic) {
         kafkaConsumer = new KafkaConsumer<>(handleProperties(properties));
-        kafkaConsumer.subscribe(Collections.singletonList(topic.name()));
+        kafkaConsumer.subscribe(Collections.singletonList(topic));
     }
 
     public KafkaListener(Properties properties, Pattern pattern) {
