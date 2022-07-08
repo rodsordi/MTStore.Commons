@@ -3,7 +3,7 @@ package br.com.mt.store.commons.infra.kafka;
 import com.google.gson.Gson;
 import org.apache.kafka.common.serialization.Serializer;
 
-public class SerializerGson<T> implements Serializer<T> {
+public class GsonSerializer<T> implements Serializer<T> {
 
     private final Gson gson = new Gson();
 

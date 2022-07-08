@@ -5,15 +5,17 @@ import org.apache.kafka.common.serialization.Deserializer;
 
 import java.util.Map;
 
-public class DeserializerGson<T> implements Deserializer<T> {
+public class GsonDeserializer<T> implements Deserializer<T> {
 
-    public static final String TYPE_CONFIG = "br.com.mt.autenticacao.mensageria.type_config";
+    public static final String CONFIG_VALUE_CLASS = "value.deserializer.class";
+    public static final String CONFIG_KEY_CLASS = "key.deserializer.class";
     private final Gson gson = new Gson();
     private Class<T> type;
 
     @Override
     public void configure(Map<String, ?> configs, boolean isKey) {
-        String typeName = String.valueOf(configs.get(TYPE_CONFIG));
+        String configKey = isKey ? CONFIG_KEY_CLASS : CONFIG_VALUE_CLASS;
+        String typeName = String.valueOf(configs.get(configKey));
         try {
             this.type = (Class<T>) Class.forName(typeName);
         } catch (ClassNotFoundException e) {
