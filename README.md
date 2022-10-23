@@ -26,6 +26,10 @@ set PATH=%M2%; %PATH%
 * [Intellij 2021.3.2 (Comunity Edition) +](https://www.jetbrains.com/pt-br/idea/download)
 * [Kafka](https://kafka.apache.org/quickstart)
 
+* [STS]
+https://marketplace.eclipse.org/content/mapstruct-eclipse-plugin
+https://marketplace.eclipse.org/content/cucumber-eclipse-plugin
+
 ```
 Windows
 

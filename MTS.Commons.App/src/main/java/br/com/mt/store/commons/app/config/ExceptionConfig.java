@@ -2,7 +2,7 @@ package br.com.mt.store.commons.app.config;
 
 import br.com.mt.store.commons.app.dto.ResponseErrorDTO;
 import br.com.mt.store.commons.app.exception.RestException;
-import br.com.mt.store.commons.domain.BusinessException;
+import br.com.mt.store.commons.domain.exception.BusinessException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -40,7 +40,7 @@ public class ExceptionConfig extends ResponseEntityExceptionHandler {
     public ResponseEntity businessException(BusinessException e, WebRequest request){
         log.warn(e.getMessage());
         var builder = new ResponseErrorDTO.Builder();
-        e.getMensagensDeErro()
+        e.getErrorMessages()
                 .forEach(mensagemDeErro -> builder.addErro(mensagemDeErro));
         return new ResponseEntity(builder.build(), HttpStatus.UNPROCESSABLE_ENTITY);
     }

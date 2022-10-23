@@ -2,6 +2,11 @@
 <project version="4">
   <component name="RemoteRepositoriesConfiguration">
     <remote-repository>
+      <option name="id" value="maven-group" />
+      <option name="name" value="maven-group" />
+      <option name="url" value="http://localhost:30211/repository/maven-group/" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="maven-central" />
       <option name="name" value="maven-central" />
       <option name="url" value="http://localhost:30203/repository/maven-central/" />
@@ -25,6 +30,11 @@
       <option name="id" value="maven-central" />
       <option name="name" value="maven-central" />
       <option name="url" value="http://your-host:8081/repository/maven-central/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Central Repository" />
+      <option name="url" value="http://localhost:30211/repository/maven-group/" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="maven-group" />
