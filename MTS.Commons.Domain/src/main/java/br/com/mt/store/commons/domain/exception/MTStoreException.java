@@ -4,7 +4,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 public abstract class MTStoreException extends RuntimeException {
-    private final Set<String> errorMessages = new HashSet<>();
+	private static final long serialVersionUID = 1L;
+	private final Set<String> errorMessages = new HashSet<>();
 
     public MTStoreException(String message) {
         super(message);

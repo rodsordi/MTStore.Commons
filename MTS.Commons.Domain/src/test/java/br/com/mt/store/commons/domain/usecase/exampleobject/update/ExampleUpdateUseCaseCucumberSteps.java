@@ -1,6 +1,6 @@
-/*package br.com.mt.store.commons.domain.usecase.example.update;
+package br.com.mt.store.commons.domain.usecase.exampleobject.update;
 
-import static org.hamcrest.MatcherAssert.assertThat;
+/*import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.hasItem;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;

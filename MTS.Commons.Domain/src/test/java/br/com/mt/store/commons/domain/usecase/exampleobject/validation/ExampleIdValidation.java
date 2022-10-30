@@ -1,4 +1,4 @@
-package br.com.mt.store.commons.domain.usecase.example.validation;
+package br.com.mt.store.commons.domain.usecase.exampleobject.validation;
 
 import br.com.mt.store.commons.domain.ExampleObject;
 import br.com.mt.store.commons.domain.validation.Validation;
@@ -15,7 +15,6 @@ public class ExampleIdValidation extends Validation<ExampleObject> {
 
     @Override
     protected void valideFormat(Set<String> errorMessages, ExampleObject example) {
-        if (example.getId() < 0)
-            errorMessages.add("validation.example.id.must_not_be_negative");
+    	
     }
 }

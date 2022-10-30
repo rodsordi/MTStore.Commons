@@ -1,4 +1,4 @@
-package br.com.mt.store.commons.domain.usecase.example.update;
+package br.com.mt.store.commons.domain.usecase.exampleobject.update;
 
 import br.com.mt.store.commons.domain.ExampleObject;
 import br.com.mt.store.commons.domain.usecase.example.save.ExampleSaveChainValidation;

@@ -1,6 +1,6 @@
-/*package br.com.mt.store.commons.domain.usecase.example.update;
+package br.com.mt.store.commons.domain.usecase.exampleobject.update;
 
-import io.cucumber.junit.Cucumber;
+/*import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 

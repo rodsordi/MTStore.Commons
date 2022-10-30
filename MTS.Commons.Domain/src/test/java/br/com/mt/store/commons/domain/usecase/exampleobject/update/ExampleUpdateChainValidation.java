@@ -1,9 +1,9 @@
-package br.com.mt.store.commons.domain.usecase.example.update;
+package br.com.mt.store.commons.domain.usecase.exampleobject.update;
 
 import br.com.mt.store.commons.domain.ExampleObject;
-import br.com.mt.store.commons.domain.usecase.example.validation.ExampleIdValidation;
-import br.com.mt.store.commons.domain.usecase.example.validation.ExampleNameValidation;
-import br.com.mt.store.commons.domain.usecase.example.validation.ExampleTypeValidation;
+import br.com.mt.store.commons.domain.usecase.exampleobject.validation.ExampleIdValidation;
+import br.com.mt.store.commons.domain.usecase.exampleobject.validation.ExampleNameValidation;
+import br.com.mt.store.commons.domain.usecase.exampleobject.validation.ExampleTypeValidation;
 import br.com.mt.store.commons.domain.validation.Validation;
 
 public class ExampleUpdateChainValidation {

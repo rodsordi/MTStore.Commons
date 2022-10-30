@@ -8,6 +8,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import java.util.List;
+import java.util.UUID;
 
 import br.com.mt.store.commons.domain.ExampleObject;
 import br.com.mt.store.commons.domain.exception.MTStoreException;
@@ -57,7 +58,7 @@ public class ExampleSaveUseCaseCucumberSteps {
 
     @And("with the Id {long}")
     public void withTheId(Long id) {
-        builder.id(id);
+        builder.id(UUID.fromString("faf16bdd-c445-4902-9ba5-9fe50e05cddf"));
     }
 
     @And("with the Name {string}")
